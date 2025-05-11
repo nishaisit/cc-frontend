@@ -1,0 +1,66 @@
+.update-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.update-card {
+  background-color: #1e1e2f;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 500px;
+}
+
+.update-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.update-form .form-group {
+  margin-bottom: 20px;
+}
+
+.update-form label {
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.update-form input {
+  background-color: #2d2d44;
+  color: #ffffff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.update-form input:focus {
+  border-color: #7100b3;
+  box-shadow: 0 0 0 0.2rem rgba(113, 0, 179, 0.25);
+}
+
+.update-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #7100b3;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn:hover {
+  background-color: rgb(247, 103, 230);
+}
+
+.error-text {
+  color: #ff4d4f;
+  text-align: center;
+  margin-bottom: 20px;
+}

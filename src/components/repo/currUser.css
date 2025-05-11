@@ -1,0 +1,21 @@
+.user-repos-container {
+    margin-top: 2rem;
+  }
+  
+  .user-repo-card {
+    border-radius: 12px;
+    padding: 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-repo-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .user-repo-meta {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  

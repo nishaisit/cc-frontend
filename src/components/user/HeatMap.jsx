@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeatMap from "@uiw/react-heat-map";
+import "./HeatMapProfile.css"; // Add this line
 
-// Function to generate random activity
 const generateActivityData = (startDate, endDate) => {
   const data = [];
   let currentDate = new Date(startDate);
@@ -10,7 +10,7 @@ const generateActivityData = (startDate, endDate) => {
   while (currentDate <= end) {
     const count = Math.floor(Math.random() * 50);
     data.push({
-      date: currentDate.toISOString().split("T")[0], //YYY-MM-DD
+      date: currentDate.toISOString().split("T")[0],
       count: count,
     });
     currentDate.setDate(currentDate.getDate() + 1);
@@ -22,47 +22,48 @@ const generateActivityData = (startDate, endDate) => {
 const getPanelColors = (maxCount) => {
   const colors = {};
   for (let i = 0; i <= maxCount; i++) {
-    const intensity = Math.floor((i / maxCount) * 255);
-    colors[i] = `rgb(225, ${255 - intensity}, ${intensity})`;
+    const intensity = Math.floor((i / maxCount) * 180);
+    colors[i] = `rgb(${intensity}, 0, ${intensity})`;
   }
-
   return colors;
 };
 
 const HeatMapProfile = () => {
   const [activityData, setActivityData] = useState([]);
   const [panelColors, setPanelColors] = useState({});
+  const [startDate, setStartDate] = useState(new Date());
 
   useEffect(() => {
-    const fetchData = async () => {
-      const startDate = "2001-01-01";
-      const endDate = "2001-01-31";
-      const data = generateActivityData(startDate, endDate);
-      setActivityData(data);
+    const today = new Date();
+    const pastDate = new Date();
+    pastDate.setDate(today.getDate() - 90);
 
-      const maxCount = Math.max(...data.map((d) => d.count));
-      setPanelColors(getPanelColors(maxCount));
-    };
+    const data = generateActivityData(pastDate, today);
+    setActivityData(data);
 
-    fetchData();
+    const maxCount = Math.max(...data.map((d) => d.count));
+    setPanelColors(getPanelColors(maxCount));
+    setStartDate(pastDate);
   }, []);
 
   return (
-    <div>
-      <h4>Recent Contributions</h4>
-      <HeatMap
-        className="HeatMapProfile"
-        style={{ maxWidth: "700px", height: "200px", color: "white" }}
-        value={activityData}
-        weekLabels={["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]}
-        startDate={new Date("2001-01-01")}
-        rectSize={15}
-        space={3}
-        rectProps={{
-          rx: 2.5,
-        }}
-        panelColors={panelColors}
-      />
+    <div className="heatmap-container">
+      <h3 className="heatmap-title">Contribution Heatmap</h3>
+      <div className="heatmap-wrapper">
+        <HeatMap
+          className="HeatMapProfile"
+          style={{ width: "100%", maxWidth: "100%" }}
+          value={activityData}
+          weekLabels={["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]}
+          startDate={startDate}
+          rectSize={15}
+          space={3}
+          rectProps={{
+            rx: 2.5,
+          }}
+          panelColors={panelColors}
+        />
+      </div>
     </div>
   );
 };

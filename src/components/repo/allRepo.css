@@ -1,0 +1,46 @@
+.repo-container {
+  padding: 30px;
+}
+
+.repo-card {
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-3px);
+}
+
+.repo-title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.repo-description {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.repo-visibility {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.repo-btn {
+  margin-top: 10px;
+}
+
+.star-icon {
+  font-size: 22px;
+  color: #ffc107;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.star-icon:hover {
+  transform: scale(1.2);
+}

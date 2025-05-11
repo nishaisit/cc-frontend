@@ -1,0 +1,31 @@
+.update-repo-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .update-repo-form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .update-repo-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .update-repo-input,
+  .update-repo-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .update-repo-button {
+    margin-top: 1rem;
+  }
+  

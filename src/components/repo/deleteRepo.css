@@ -1,0 +1,25 @@
+.delete-repo-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff0f0;
+    border: 1px solid #ffc0c0;
+    border-radius: 12px;
+  }
+  
+  .delete-warning {
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .delete-button {
+    margin-right: 1rem;
+  }
+  
+  .cancel-button {
+    background-color: #6c757d;
+    color: white;
+  }
+  

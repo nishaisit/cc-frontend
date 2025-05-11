@@ -4,21 +4,23 @@ import "./navbar.css";
 
 const Navbar = () => {
   return (
-    <nav>
-      <Link to="/">
-        <div>
+    <nav className="navbar">
+      <Link to="/" className="logo-container">
+        <div className="logo">
           <img
-            src="https://i.pinimg.com/736x/bc/9f/fe/bc9ffe18ff9b3c4633243705d325b0c7.jpg"
-            alt="Black Bow Logo"
+            src="https://i.pinimg.com/736x/d8/85/ec/d885ecb56a01f00d9980b82f8c945459.jpg"
+            alt="Code Collab Logo"
+            className="logo-img"
           />
-          <h3>Code-Collab</h3>
+          <h3 className="logo-text">Code-Collab</h3>
         </div>
       </Link>
-      <div>
-        <Link to="/create">
+
+      <div className="nav-links">
+        <Link to="repo/create" className="nav-link">
           <p>Create a Repository</p>
         </Link>
-        <Link to="/profile">
+        <Link to="/profile" className="nav-link">
           <p>Profile</p>
         </Link>
       </div>

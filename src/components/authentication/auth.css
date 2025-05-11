@@ -1,146 +1,119 @@
-.login-wrapper {
-    color: #f1f6fd;
-    height: 100vh;
-    width: 100vw;
-    font-family: "Asap", sans-serif;
-    background-color: #0c1116;
+/* General Layout */
+.login-wrapper, .signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1e1e1e; /* Dark background */
+}
+
+.login-logo-container, .signup-logo-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-login, .logo-signup {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Main Box (Login/Signup Form) */
+.login-box-wrapper, .signup-box-wrapper {
+  background-color: #2f2f2f; /* Darker gray for the form background */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-heading, .signup-heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-box, .signup-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #46aaff; /* Light blue for the page title */
+  font-weight: 700;
+}
+
+/* Input Fields */
+input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #2f8fe2; /* Blue border */
+  background-color: #3d3d3d; /* Dark gray background */
+  color: #e4e4e4; /* Light text */
+  border-radius: 12px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00bfae; /* Green-blue on focus */
+}
+
+input::placeholder {
+  color: #aaa; /* Lighter placeholder text */
+}
+
+/* Buttons */
+button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #2f8fe2; /* Blue button */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #555; /* Disabled button */
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #00bfae; /* Green-blue on hover */
+}
+
+/* Links (Login/Signup footer) */
+.pass-box {
+  text-align: center;
+}
+
+.pass-box a {
+  color: #46aaff; /* Light blue for links */
+  text-decoration: none;
+}
+
+.pass-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-wrapper, .signup-wrapper {
+    padding: 1rem;
   }
-  
-  .login-logo-container {
-    padding: 40px 0px 20px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .login-box-wrapper, .signup-box-wrapper {
+    padding: 1.5rem;
+    width: 90%;
   }
-  
-  .logo-login {
-    width: 48px;
+
+  .logo-login, .logo-signup {
+    width: 100px;
   }
-  
-  .login-box-wrapper {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .login-box {
-    padding: 20px 0px;
-    width: 364px;
-    min-height: 300px;
-    border-radius: 10px;
-    background-color: #161a23;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .input {
-    width: 250px;
-    height: 35px;
-    background-color: #0c1116;
-    border-radius: 5px;
-    padding: 0 1rem;
-    border: 0.5px solid #f1f6fd;
-    font-size: 1rem;
-    color: whitesmoke;
-    transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
-      color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
-      background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #f1f6fd;
-    transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
-  }
-  
-  .input:hover,
-  .input:focus {
-    border-color: lightblue;
-  }
-  
-  .submit-btn {
-    background-color: #238636;
-    border: none;
-    width: 250px;
-    border-radius: 5px;
-    height: 35px;
-    color: #f1f6fd;
-    font-weight: 700;
-    padding: 0 1rem;
-  }
-  
-  .submit-btn:hover {
-    background-color: #499458;
-    cursor: pointer;
-  }
-  
-  .passkey-signin {
-    border: 0.5px solid #e6e9ed;
-    width: 360px;
-    border-radius: 10px;
-    height: 90px;
-    margin: 10px auto;
-  }
-  
-  .passkey-signin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-direction: column;
-  }
-  
-  .passkey,
-  .signup {
-    color: #2b7df7;
-    cursor: pointer;
-    /* font-size: px; */
-  }
-  
-  .login-btn {
-    width: 250px;
-  }
-  
-  .pass-box {
-    width: 364px;
-    height: auto;
-    border-radius: 10px;
-    padding: 20px 10px;
-    border: 1px solid #3d3d3d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .signup-button {
-    width: 250px;
-  }
-  
-  @media screen and (max-width: 400px) {
-    .login-box {
-      width: 200px;
-    }
-  
-    .input {
-      width: 150px;
-    }
-  
-    .login-btn {
-      width: 150px;
-    }
-  
-    .pass-box {
-      width: 200px;
-    }
-  }
+}
+
+
+

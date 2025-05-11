@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../authContext";
-
-import { PageHeader } from "@primer/react";
-import { Box, Button } from "@primer/react";
+import { Button } from "@primer/react";
 import "./auth.css";
-
-import logo from "../../assets/logo-cc.jpeg";
+import logo from "../../assets/cat-pfp.jpeg";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
@@ -19,22 +16,19 @@ const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
     try {
       setLoading(true);
       const res = await axios.post("http://localhost:3002/signup", {
-        email: email,
-        password: password,
-        username: username,
+        email,
+        username,
+        password,
       });
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("userId", res.data.userId);
-
       setCurrentUser(res.data.userId);
       setLoading(false);
-
-      window.location.href = '/';
+      window.location.href = "/";
     } catch (err) {
       console.error(err);
       alert("Signup Failed!");
@@ -44,63 +38,42 @@ const Signup = () => {
 
   return (
     <div className="login-wrapper">
+      <div className="animated-bg" />
       <div className="login-logo-container">
         <img className="logo-login" src={logo} alt="Logo" />
       </div>
 
       <div className="login-box-wrapper">
         <div className="login-heading">
-          <Box sx={{ padding: 1 }}>
-            <PageHeader>
-              <PageHeader.TitleArea variant="large">
-                <PageHeader.Title>Sign Up</PageHeader.Title>
-              </PageHeader.TitleArea>
-            </PageHeader>
-          </Box>
+          <h2>Sign Up</h2>
         </div>
 
         <div className="login-box">
-          <div>
-            <label className="label">Username</label>
-            <input
-              autoComplete="off"
-              name="Username"
-              id="Username"
-              className="input"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
+          <label className="label">Username</label>
+          <input
+            className="input"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-          <div>
-            <label className="label">Email address</label>
-            <input
-              autoComplete="off"
-              name="Email"
-              id="Email"
-              className="input"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+          <label className="label">Email address</label>
+          <input
+            className="input"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-          <div className="div">
-            <label className="label">Password</label>
-            <input
-              autoComplete="off"
-              name="Password"
-              id="Password"
-              className="input"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+          <label className="label">Password</label>
+          <input
+            className="input"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
           <Button
-            variant="primary"
             className="login-btn"
             disabled={loading}
             onClick={handleSignup}

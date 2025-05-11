@@ -1,5 +1,208 @@
+/* General Wrapper */
 #dashboard {
-    display: flex;
-    width: 1080px;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #1e1e1e; /* Dark background for overall layout */
+  min-height: 100vh;
+}
+
+aside {
+  width: 250px;
+  background-color: #2b2b2b; /* Dark gray for sidebar */
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+aside h3 {
+  font-size: 1.5rem;
+  color: #2f8fe2; /* Tech-inspired blue for headings */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+aside h4 {
+  font-size: 1.1rem;
+  color: #e4e4e4; /* Light text for repo names */
+  margin-bottom: 0.5rem;
+}
+
+.repo-description {
+  font-size: 0.9rem; /* Smaller text size */
+  color: #666; /* Optional: Lighter color for description */
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+aside ul li p {
+  font-size: 1rem;
+  color: #e4e4e4; /* Light gray for text */
+  margin: 0.5rem 0;
+}
+
+/* Main Content */
+main {
+  flex-grow: 1;
+  background-color: #2f2f2f; /* Slightly lighter dark gray for the main area */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+main h2 {
+  font-size: 2rem;
+  color: #46aaff; /* Light blue for main header */
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+#search input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #2f8fe2; /* Blue border for input */
+  border-radius: 12px;
+  background-color: #3d3d3d; /* Darker gray for input background */
+  color: #e4e4e4; /* Light text for input */
+  margin-bottom: 2rem;
+}
+
+#search input:focus {
+  outline: none;
+  border-color: #00bfae; /* Bright green-blue on focus */
+}
+
+#search input::placeholder {
+  color: #aaa; /* Lighter placeholder text */
+  font-style: italic;
+}
+
+/* Repository Cards */
+#search div {
+  background-color: #3d3d3d; /* Darker gray background for card */
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: #e4e4e4; /* Light text */
+}
+
+#search div h4 {
+  font-size: 1.2rem;
+  color: #46aaff; /* Blue for repository headings */
+}
+
+#search div p {
+  font-size: 1rem;
+  color: #ccc; /* Lighter gray for descriptions */
+}
+
+/* Hover Effects */
+#search div:hover {
+  background-color: #2b2b2b; /* Darker on hover for better interactivity */
+}
+
+#search input:hover {
+  border-color: #00bfae; /* Green-blue on hover */
+}
+
+/* Custom Button Styles */
+.button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.button-info {
+  background-color: #2196F3;
+  color: white;
+}
+
+.button-info:hover {
+  background-color: #0b7dda;
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background-color: #9e9e9e;
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: #7d7d7d;
+  transform: translateY(-2px);
+}
+
+.button-warning {
+  background-color: #ff9800;
+  color: white;
+}
+
+.button-warning:hover {
+  background-color: #fb8c00;
+  transform: translateY(-2px);
+}
+
+.button-danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.button-danger:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #dashboard {
+    flex-direction: column;
+    gap: 1rem;
   }
+
+  aside {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  #search input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  aside {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  #search input {
+    font-size: 0.9rem;
+  }
+}

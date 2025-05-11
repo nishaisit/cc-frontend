@@ -51,7 +51,7 @@ const Profile = () => {
         </UnderlineNav.Item>
 
         <UnderlineNav.Item
-          onClick={() => navigate("/repo")}
+          onClick={() => navigate("/repo/all")}
           icon={RepoIcon}
           sx={{
             backgroundColor: "transparent",
@@ -82,22 +82,44 @@ const Profile = () => {
 
       <div className="profile-page-wrapper">
         <div className="user-profile-section">
-          <div className="profile-image"></div>
+          <div className="profile-image">
+            <img
+              src={userDetails.avatar || "https://i.pinimg.com/736x/c6/ce/95/c6ce95ab42b55f83169e8408fbadca6c.jpg"}
+              alt="User Avatar"
+              className="avatar-img"
+            />
+          </div>
 
           <div className="name">
             <h3>{userDetails.username}</h3>
           </div>
 
-          <button className="follow-btn">Follow</button>
+          {/* <button className="follow-btn">Follow</button> */}
 
           <div className="follower">
-            <p>20 Followers</p>
-            <p>3 Following</p>
+            <p>{userDetails.followersCount} Followers</p>
+            <p>{userDetails.followingCount} Following</p>
           </div>
         </div>
 
         <div className="heat-map-section">
           <HeatMapProfile />
+        </div>
+
+        <div className="action-buttons">
+          <button
+            className="update-btn"
+            onClick={() => navigate(`/updateProfile/${userDetails._id}`)}
+          >
+            Update Profile
+          </button>
+
+          <button
+            className="delete-btn"
+            onClick={() => navigate(`/deleteProfile/${userDetails._id}`)}
+          >
+            Delete Profile
+          </button>
         </div>
       </div>
     </>
